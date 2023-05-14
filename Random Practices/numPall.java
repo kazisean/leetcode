@@ -8,22 +8,21 @@ public class numPall {
 
 
 
-    public static boolean isPalindrome(String word) {
-        if (word.length() == 0 || word.length() == 1) {
-            // base case 1, palindrome!
+    public static boolean isPalindrome(int number) {
+        String numberString = String.valueOf(number);
+        return isPalindromeHelper(numberString, 0, numberString.length() - 1);
+    }
+    
+    private static boolean isPalindromeHelper(String numberString, int left, int right) {
+        if (left >= right) {
             return true;
         }
-        else if (word.charAt(0) != word.charAt(word.length() - 1)){
-        // base case 2, first and last disagree, not a palindrome!
+        if (numberString.charAt(left) != numberString.charAt(right)) {
             return false;
         }
-        else{
-        // recursive case!
-        // extract the middle word
-        String middle = word.substring(1, word.length() - 1);
-        return isPalindrome(middle);
-        }
+        return isPalindromeHelper(numberString, left + 1, right - 1);
     }
+    
     
 }
 
