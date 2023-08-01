@@ -25,8 +25,6 @@ class Solution {
         }
 
         return sendArray;
-
-
     }
 }
 // @lc code=end
