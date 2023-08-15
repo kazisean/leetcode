@@ -7,19 +7,16 @@
 // @lc code=start
 class Solution {
     public String finalString(String s) {
-        String output = "";
-        StringBuilder input1 = new StringBuilder();
-        for(int i = 0; i < s.length(); i++){
+        StringBuilder aa = new StringBuilder();
+        for (int i = 0; i < s.length(); i++){
             if (s.charAt(i) == 'i'){
-            
-         output = new StringBuffer(output).reverse().toString();
-
+                aa.reverse();
             }
-            else {
-                output += s.charAt(i);
+            else{
+                aa.append(s.charAt(i));
             }
         }
-        return output;
+        return aa.toString();     
     }
 }
 // @lc code=end
